@@ -7,6 +7,11 @@ import java.util.concurrent.locks.ReentrantLock;
 //interface Lock and Condition
 //Lock : lock, unlock ...
 //Condition : await, signal, signalAll ...
+
+
+//Can also use ArrayBlockinQueue or
+// LinkedBlockingQueue interfaces
+// using put(E e) and take() methods
 public class BoundedBufferWithPackages<T> {
 	
 	final Lock lock = new ReentrantLock(true); //ReentrantLock - inherit key for further locks; "true" - fair
