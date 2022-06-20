@@ -7,6 +7,8 @@ public class BoundedBuffer<T> {
 	int takeptr;
 	int count;
 	
+	//Classic monitor implementation of BoundedBuffer
+	
 	public synchronized void put(T x) throws InterruptedException{
 		while( count == items.length) {
 			wait();

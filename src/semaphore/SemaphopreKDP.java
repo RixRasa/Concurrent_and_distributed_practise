@@ -10,20 +10,20 @@ public class SemaphopreKDP {
 	public synchronized void semWait() {
 		while(s == 0) {
 			try {
-				wait(); // n3 n5 cekaju blokirane
-				// n4 n2 n1 cekaju da nastave sa radom
+				wait(); // n3 n5 waiting to be unblocked
+				// n4 n2 n1 waiting on their turn with 'this' key
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 		s--;
-		//notifyAll(); ili notify(); BESPOTREBNO BUDJENJE
+		//notifyAll(); ili notify(); USELESS WAKING UP
 	}
 	
 	public synchronized void semSignal() {
-		s++; // tri signala dolaze zaredom: s=1 => s=2 => s=3
-		notify(); // odblokiraju se niti n4 => n2 => n1
+		s++; // three signals coming in a row: s=1 => s=2 => s=3
+		notify(); // unblocking three threads n4 => n2 => n1
 		
 		
 		//if(s == 1) {notify();}
