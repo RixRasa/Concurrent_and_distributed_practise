@@ -1,4 +1,4 @@
-package semaphore;
+ package semaphore;
 
 public class SemaphopreKDP {
 	private int s = 0;
