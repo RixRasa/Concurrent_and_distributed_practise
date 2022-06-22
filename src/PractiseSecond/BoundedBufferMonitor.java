@@ -1,8 +1,6 @@
 package PractiseSecond;
 
-import java.io.ObjectOutputStream.PutField;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 
@@ -43,9 +41,4 @@ public class BoundedBufferMonitor<T> {
 		notifyAll();
 		return data;
 	}
-	
-	
-	
-	
-	
 }
